@@ -55,11 +55,10 @@ const disableLetterButton = (buttonEl) => {
 // Return `true` if `letter` is in the word.
 //
 const isLetterInWord = (letter) => {
+  console.log(isLetterInWord)
+  return document.querySelector(`div.${letter}`) !== undefined;
 
-  // return document.querySelector(`div.${letter}`) !== undefined;
-
-  const letterDivision = $(`div.${letter}`);
-  return letterDivision !== undefined;
+  // return $(`div.${letter}`) !== undefined;
 };
 
 
@@ -120,7 +119,7 @@ const resetGame = () => {
 
   createDivsForChars(word);
   generateLetterButtons();
-  const numWrong2 = 0;
+
   $('button').on('click', (evt) => {
     const clickedBtn = $(evt.target);
     disableLetterButton(clickedBtn);
@@ -130,7 +129,7 @@ const resetGame = () => {
     if (isLetterInWord(letter)) {
       handleCorrectGuess(letter);
     } else {
-      numWrong2 = handleWrongGuess(numWrong2);
+      handleWrongGuess(letter);
     }
   });
 
