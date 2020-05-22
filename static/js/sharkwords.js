@@ -61,6 +61,9 @@ const isLetterInWord = (letter) => {
   // return $(`div.${letter}`) !== undefined;
 };
 
+///This is always returning true?? Therefore causing problems below
+///so that handleWrongGuess will not run at all!! Not sure how to fix
+
 
 // Called when `letter` is in word. Update contents of divs with `letter`.
 //
